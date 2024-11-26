@@ -1,0 +1,42 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: white;
+}
+
+.mouse-trail-musk{
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    padding: 100px;
+}
+.title{
+    font-family: "Poppins";
+    color: black;
+    text-transform: uppercase;
+    font-size: 80px;
+    text-align: center;
+    cursor: none;
+}
+
+.cursor{
+    position: absolute;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    background-color: black;
+    mix-blend-mode: difference; 
+    background: white;
+    pointer-events: none;
+    opacity: 0;
+    z-index: -1;
+}
