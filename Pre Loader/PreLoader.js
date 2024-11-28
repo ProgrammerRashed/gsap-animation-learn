@@ -71,18 +71,27 @@ loadingTimeline
     },
     "<"
   );
-loadingTimeline.to(loadingText, {
-  opacity: 0,
-  duration: 1,
-
-  ease: "power1.out",
-},  "<").to(counter, {
-    opacity: 0,
-    duration: 1,
-  
-    ease: "power1.out",
-  }, )
-
+loadingTimeline
+  .to(
+    loadingText,
+    {
+      opacity: 0,
+      duration: 1,
+      ease: "power1.out",
+      display: "none",
+    },
+    "<"
+  )
+  .to(
+    counter,
+    {
+      opacity: 0,
+      duration: 1,
+      ease: "power1.out",
+      display: "none",
+    },
+    "<"
+  );
 
 // Independent animations for bg-div-1 and bg-div-2 translations
 gsap.to(".bg-div-1", {
