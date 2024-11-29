@@ -78,7 +78,8 @@ loadingTimeline
       opacity: 0,
       duration: 1,
       ease: "power1.out",
-      display: "none",
+
+
     },
     "<"
   )
@@ -88,10 +89,14 @@ loadingTimeline
       opacity: 0,
       duration: 1,
       ease: "power1.out",
-      display: "none",
+
     },
     "<"
-  );
+  ).to(".footer-menu",{
+    duration: 1,
+    opacity: 1,
+    ease: "power1.out",
+  });
 
 // Independent animations for bg-div-1 and bg-div-2 translations
 gsap.to(".bg-div-1", {
@@ -105,3 +110,5 @@ gsap.to(".bg-div-2", {
   duration: 1.3,
   ease: "power1.out",
 });
+
+
