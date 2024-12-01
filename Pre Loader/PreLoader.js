@@ -43,7 +43,7 @@ const startLoader = () => {
 
 startLoader();
 
-// Add all animations to the same timeline for synchronization
+// Add animations to the timeline
 loadingTimeline
   .to(".loader-card", {
     scale: 1,
@@ -59,7 +59,7 @@ loadingTimeline
       duration: 1,
       ease: "power1.out",
     },
-    "<"
+    "<" // Start at the same time as the previous animation
   )
   .to(
     ".bg-div-1",
@@ -69,19 +69,16 @@ loadingTimeline
       duration: 1,
       ease: "power1.out",
     },
-    "<"
-  );
-loadingTimeline
+    "<" // Start at the same time as the previous animation
+  )
   .to(
     loadingText,
     {
       opacity: 0,
       duration: 1,
       ease: "power1.out",
-
-
     },
-    "<"
+    "<" // Start at the same time as the previous animation
   )
   .to(
     counter,
@@ -89,15 +86,44 @@ loadingTimeline
       opacity: 0,
       duration: 1,
       ease: "power1.out",
-
     },
-    "<"
-  ).to(".footer-menu",{
-    duration: 1,
+    "<" // Start at the same time as the previous animation
+  )
+  // Animate footer and header menus
+  .to(
+    ".footer-menu",
+    {
+      duration: 1,
+      opacity: 1,
+      y: 0, // Optional: Slide up effect
+      ease: "power1.out",
+    },
+    ">" // Start after the previous animation finishes
+  )
+  .to(
+    ".header-menu",
+    {
+      duration: 1,
+      opacity: 1,
+      y: 0, // Optional: Slide down effect
+      ease: "power1.out",
+    },
+    "<" // Start at the same time as the footer menu animation
+  );
+
+
+  loadingTimeline.to(".text", {
+    x: "0px",
+    ease: "power1.out",
+    duration: 1
+  }).to(".header-image", {
     opacity: 1,
     ease: "power1.out",
-  });
+    duration: 1
 
+  })
+
+  
 // Independent animations for bg-div-1 and bg-div-2 translations
 gsap.to(".bg-div-1", {
   x: "55px",
